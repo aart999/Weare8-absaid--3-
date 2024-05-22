@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="footer.css" />
+		<title>Abdullah Sunulu</title>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
+
+			gtag('config', 'G-69T39QB2S5')
+		</script>
+		<style>
+			body._lock {
+				overflow: hidden;
+			}
+			header {
+				position: fixed;
+				background-color: rgb(255, 255, 255);
+				width: 100%;
+				top: 0;
+				left: 0;
+				height: 55px;
+				z-index: 10;
+			}
+
+			.header__container {
+				margin-right: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 55px;
+			}
+
+			#logo__img {
+				width: 50px;
+				height: 50px;
+				margin-left: 50px;
+				align-items: center;
+				z-index: 2;
+			}
+
+			@media screen and (min-width: 768px) {
+				ul {
+					display: flex;
+					gap: 50px;
+					list-style: none;
+					align-items: center;
+				}
+				li,
+				a {
+					text-decoration: none;
+					color: black;
+					transition: transform 0.5s;
+					font-weight: bolder;
+				}
+				#cz {
+					color: red;
+				}
+				li:hover {
+					transform: translateY(-10px);
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.burger {
+					z-index: 5;
+					display: block;
+					position: relative;
+					width: 30px;
+					height: 18px;
+					cursor: pointer;
+				}
+
+				.burger span,
+				.burger::before,
+				.burger::after {
+					left: 0;
+					position: absolute;
+					height: 10%;
+					width: 100%;
+					transition: all 0.3s ease 0s;
+					background-color: black;
+				}
+
+				.burger::before,
+				.burger::after {
+					content: '';
+				}
+
+				.burger::before {
+					top: 0;
+				}
+
+				.burger::after {
+					bottom: 0;
+				}
+
+				.burger span {
+					top: 50%;
+					transform: scale(1) translate(0px, -50%);
+				}
+				.burger._active span {
+					transform: scale(0) translate(0px, -50%);
+					background-color: white;
+				}
+				.burger._active::before {
+					top: 50%;
+					transform: rotate(-45deg) translate(0px, -50%);
+					background-color: white;
+				}
+				.burger._active::after {
+					bottom: 50%;
+					transform: rotate(45deg) translate(0px, 50%);
+					background-color: white;
+				}
+
+				.menu {
+					position: fixed;
+					text-align: center;
+					padding-top: 20%;
+					top: 0;
+					right: -100%;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0, 0, 0, 0.9);
+					transition: right 0.3s ease 0s;
+					overflow: auto;
+				}
+
+				.menu._active {
+					right: 0;
+				}
+				.menu::before {
+					content: '';
+					position: fixed;
+					width: 100%;
+					top: 0;
+
+					left: 0;
+					height: 50px;
+				}
+
+				ul {
+					font-size: 24px;
+					position: relative;
+					list-style: none;
+					padding-left: 0px;
+				}
+
+				li,
+				a {
+					text-decoration: none;
+					color: #fff;
+					margin-bottom: 50px;
+					transition: transform 0.5s;
+				}
+				#cz {
+					color: red;
+				}
+				li:hover {
+					transform: translateY(-10px);
+				}
+			}
+
+			/* PopUp Form */
+			.open-button {
+				background-color: #555;
+				color: white;
+				padding: 16px 20px;
+				border: none;
+				cursor: pointer;
+				opacity: 0.8;
+				position: fixed;
+				bottom: 23px;
+				right: 28px;
+				width: 280px;
+			}
+
+			/* The popup form - hidden by default */
+			.form-popup {
+				display: none;
+				position: fixed;
+				bottom: 0;
+				right: 15px;
+				border: 3px solid #f1f1f1;
+				z-index: 9;
+			}
+
+			/* Add styles to the form container */
+			.form-container {
+				max-width: 300px;
+				padding: 10px;
+				background-color: white;
+			}
+
+			/* Full-width input fields */
+			.form-container input[type='text'],
+			.form-container input[type='password'] {
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				border: none;
+				background: #f1f1f1;
+			}
+
+			/* When the inputs get focus, do something */
+			.form-container input[type='text']:focus,
+			.form-container input[type='password']:focus {
+				background-color: #ddd;
+				outline: none;
+			}
+
+			/* Set a style for the submit/login button */
+			.form-container .btn {
+				background-color: #04aa6d;
+				color: white;
+				padding: 16px 20px;
+				border: none;
+				cursor: pointer;
+				width: 100%;
+				margin-bottom: 10px;
+				opacity: 0.8;
+			}
+
+			/* Add a red background color to the cancel button */
+			.form-container .cancel {
+				background-color: red;
+			}
+
+			/* Add some hover effects to buttons */
+			.form-container .btn:hover,
+			.open-button:hover {
+				opacity: 1;
+			}
+			/* Dropdown Button */
+			.dropbtn {
+				color: rgb(0, 0, 0);
+				padding: 16px;
+				font-weight: bolder;
+				font-size: 16px;
+				border: none;
+			}
+
+			/* The container <div> - needed to position the dropdown content */
+			.dropdown {
+				position: relative;
+				display: inline-block;
+			}
+
+			/* Dropdown Content (Hidden by Default) */
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f1f1f1;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
+
+			/* Links inside the dropdown */
+			.dropdown-content a {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				cursor: pointer;
+			}
+
+			/* Change color of dropdown links on hover */
+			.dropdown-content a:hover {
+				background-color: #14a8a1;
+			}
+
+			/* Show the dropdown menu on hover */
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+
+			/* Change the background color of the dropdown button when the dropdown content is shown */
+			.dropdown:hover .dropbtn {
+				background-color: #00fff257;
+			}
+			/* main content */
+			* {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: large;
+			}
+			#paragraph {
+				background-color: rgba(8, 8, 8, 0.151);
+				position: absolute;
+				top: 600px;
+				left: 30%;
+				width: 800px;
+			}
+			#mypic {
+				position: absolute;
+				top: 100px;
+				left: 40%;
+				width: 300px;
+			}
+			#name {
+				position: absolute;
+				top: 520px;
+				left: 44%;
+				width: 300px;
+			}
+			.advice {
+				position: relative;
+				top: 850px;
+			}
+			.btn {
+				background-color: #04aa6d; /* Green */
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+			}
+			.ferdiland {
+				position: absolute;
+				left: 1750px;
+				top: 850px;
+			}
+			.content {
+				padding-bottom: 258px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="header__container">
+				<img src="/img/jslogo.png" alt="logo" id="logo__img" />
+
+				<div class="burger">
+					<span></span>
+				</div>
+
+				<nav class="menu">
+					<ul>
+						<ul>
+							<li>
+								<div class="dropdown">
+									<button class="dropbtn">
+										Lang
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-globe"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+											/>
+										</svg>
+									</button>
+									<div class="dropdown-content">
+										<a onclick="translateturkish()">Türkçe</a>
+										<a onclick="translateenglish()">English</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="/html/contact.html">Contact</a></li>
+
+						<li>
+							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<img src="/img/photoes/abdullah.jpg" alt="picture" id="mypic" />
+			<h2 id="name">Abdullah Sunulu</h2>
+			<div id="paragraph">
+				Merhabalar! Ben Abdullah Sunulu 15 yaşındayım, yazılım ve siber güvenlik
+				ile uğraşıyorum. Yazılım hayatım 2015 - 2016 da başladı, ilk zamanlar
+				basit batch programları yazıyordum daha sonra arduino ile tanıştım
+				arduino'dan sonra temel düzeyde C# öğrendim şu an javascript öğreniyorum
+				ve javascript öğrendikten sonra BackEnd developing'e adım atmayı
+				düşünüyorum
+			</div>
+
+			<div onload="translate();" class="advice">
+				<button id="advicebtn" class="btn" onclick="openForm();">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						fill="currentColor"
+						class="bi bi-headset"
+						viewBox="0 0 16 16"
+					>
+						<path
+							d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5"
+						/>
+					</svg>
+					Advice me anything
+				</button>
+			</div>
+			<div class="form-popup" id="myForm">
+				<form class="form-container">
+					<h1>Advice Me Anything!</h1>
+
+					<label for="email"><b>Email</b></label>
+					<input
+						type="text"
+						placeholder="Enter Email"
+						name="email"
+						id="mail"
+						required
+					/>
+
+					<label for="msg"><b>Message</b></label>
+					<input
+						type="text"
+						placeholder="Enter Your Message"
+						name="msg"
+						id="msg"
+						required
+					/>
+
+					<button type="submit" class="btn" onclick="sendMessage();">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="currentColor"
+							class="bi bi-send"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+							/>
+						</svg>
+						Send
+					</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="currentColor"
+							class="bi bi-x-lg"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+							/>
+						</svg>
+						Close
+					</button>
+				</form>
+			</div>
+			<div class="ferdiland">
+				<a href="https://ferdiland1.github.io/ferdiland/">
+					<button class="btn" id="ferdiland">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="currentColor"
+							class="bi bi-link-45deg"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"
+							/>
+							<path
+								d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"
+							/>
+						</svg>
+						FerdiLand
+					</button>
+				</a>
+			</div>
+		</main>
+		<script>
+			//translate
+			function translateturkish() {
+				let texttr =
+					"Merhabalar! Ben Abdullah Sunulu 15 yaşındayım, yazılım ve siber güvenlik ile uğraşıyorum. Yazılım hayatım 2015 - 2016 da başladı, ilk zamanlar basit batch programları yazıyordum daha sonra arduino ile tanıştım arduino'dan sonra temel düzeyde C# öğrendim şu an javascript öğreniyorum ve javascript öğrendikten sonra BackEnd developing'e adım atmayı düşünüyorum"
+				document.getElementById('paragraph').innerHTML = texttr
+			}
+			function translateenglish() {
+				let texten =
+					"Hello! I am Abdullah Sunulu, I am 15 years old, I deal with software and cyber security. My software life started in 2015 - 2016, at first I was writing simple batch programs, then I met Arduino, after Arduino, I learned C# at a basic level, now I'm learning JavaScript and after learning JavaScript, I'm thinking of stepping into BackEnd development."
+				document.getElementById('paragraph').innerHTML = texten
+			}
+
+			//popup form
+			function openForm() {
+				document.getElementById('myForm').style.display = 'block'
+			}
+
+			function closeForm() {
+				document.getElementById('myForm').style.display = 'none'
+			}
+			//----------------------
+			const menuButton = document.querySelector('.burger')
+			if (menuButton) {
+				const menuBody = document.querySelector('.menu')
+				menuButton.addEventListener('click', function (e) {
+					document.body.classList.toggle('_lock')
+					menuButton.classList.toggle('_active')
+					menuBody.classList.toggle('_active')
+				})
+			}
+			//send discord webhook
+			function sendMessage() {
+				const request = new XMLHttpRequest()
+				var mail = document.getElementById('mail')
+				const mailto = mail.value
+				var msg = document.getElementById('msg')
+				const message = msg.value
+				request.open('POST', '')
+
+				request.setRequestHeader('Content-type', 'application/json')
+
+				const params = {
+					username: 'Mesaj Geldi Gurban Oldugum',
+					avatar_url: '',
+					content:
+						'e-mail:' +
+						' ' +
+						mailto +
+						' ' +
+						'||' +
+						' ' +
+						'Message:' +
+						' ' +
+						message,
+				}
+
+				request.send(JSON.stringify(params))
+				alert('Öneriniz için teşekkür ederim :)')
+			}
+		</script>
+	</body>
+</html>

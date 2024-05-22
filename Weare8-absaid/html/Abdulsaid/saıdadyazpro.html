@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Get User Name</title>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
+
+			gtag('config', 'G-69T39QB2S5')
+		</script>
+		<style>
+			* {
+				background: black;
+				color: white;
+				align-items: center;
+			}
+
+			.con {
+				margin: 20rem 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="con">
+			<label for="userName">Adınızı yazınız:</label>
+			<input type="text" id="userName" />
+			<button onclick="saveUserName()">Tıklayın</button>
+		</div>
+
+		<script src="/js/abdulsaid.js"></script>
+	</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ibrahim Talha Kimdir?</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/css/footer.css" />
+		<script
+			src="https://kit.fontawesome.com/8b54351f60.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-69T39QB2S5"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag('js', new Date())
+
+			gtag('config', 'G-69T39QB2S5')
+		</script>
+	</head>
+	<style>
+		body {
+			font-size: large;
+			background-color: white;
+		}
+
+		#resim {
+			display: flex;
+
+			width: 270px;
+			height: 300px;
+			border-radius: 50%;
+			margin: auto;
+		}
+		.cizgi {
+			text-decoration: underline;
+			color: #ff0000;
+		}
+		.metin {
+			background-color: #aad9bb;
+			padding: 15px;
+		}
+		.baslık {
+			text-decoration: underline;
+			color: black;
+		}
+		.link {
+			text-decoration: none;
+			color: red;
+		}
+		.giriş {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			cursor: pointer;
+			font-size: xx-large;
+		}
+		.yazı {
+			font-size: medium;
+		}
+		body._lock {
+			overflow: hidden;
+		}
+		header {
+			position: relative;
+			background-color: white;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 55px;
+			z-index: 10;
+		}
+
+		.header__container {
+			margin-right: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 55px;
+		}
+
+		#logo__img {
+			width: 50px;
+			height: 50px;
+			margin-left: 50px;
+			align-items: center;
+			z-index: 2;
+		}
+
+		@media screen and (min-width: 768px) {
+			ul {
+				display: flex;
+				gap: 50px;
+				list-style: none;
+				align-items: center;
+			}
+			li,
+			a {
+				text-decoration: none;
+				color: black;
+				transition: transform 0.5s;
+				font-weight: bolder;
+			}
+			#cz {
+				color: red;
+			}
+			li:hover {
+				transform: translateY(-10px);
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.burger {
+				z-index: 5;
+				display: block;
+				position: relative;
+				width: 30px;
+				height: 18px;
+				cursor: pointer;
+			}
+
+			.burger span,
+			.burger::before,
+			.burger::after {
+				left: 0;
+				position: absolute;
+				height: 10%;
+				width: 100%;
+				transition: all 0.3s ease 0s;
+				background-color: black;
+			}
+
+			.burger::before,
+			.burger::after {
+				content: '';
+			}
+
+			.burger::before {
+				top: 0;
+			}
+
+			.burger::after {
+				bottom: 0;
+			}
+
+			.burger span {
+				top: 50%;
+				transform: scale(1) translate(0px, -50%);
+			}
+			.burger._active span {
+				transform: scale(0) translate(0px, -50%);
+				background-color: white;
+			}
+			.burger._active::before {
+				top: 50%;
+				transform: rotate(-45deg) translate(0px, -50%);
+				background-color: white;
+			}
+			.burger._active::after {
+				bottom: 50%;
+				transform: rotate(45deg) translate(0px, 50%);
+				background-color: white;
+			}
+
+			.menu {
+				position: fixed;
+				text-align: center;
+				padding-top: 20%;
+				top: 0;
+				right: -100%;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.9);
+				transition: right 0.3s ease 0s;
+				overflow: auto;
+			}
+
+			.menu._active {
+				right: 0;
+			}
+			.menu::before {
+				content: '';
+				position: fixed;
+				width: 100%;
+				top: 0;
+
+				left: 0;
+				height: 50px;
+			}
+
+			ul {
+				font-size: 24px;
+				position: relative;
+				list-style: none;
+				padding-left: 0px;
+			}
+
+			li,
+			a {
+				text-decoration: none;
+				color: #fff;
+				margin-bottom: 50px;
+				transition: transform 0.5s;
+			}
+			#cz {
+				color: red;
+			}
+			li:hover {
+				transform: translateY(-10px);
+			}
+		}
+	</style>
+	<body>
+		<header>
+			<div class="header__container">
+				<img src="/img/jslogo.png" alt="logo" id="logo__img" />
+
+				<div class="burger">
+					<span></span>
+				</div>
+
+				<nav class="menu">
+					<ul>
+						<li><a href="/index.html">Home</a></li>
+
+						<li><a href="../contact.html">Contact</a></li>
+						<li>
+							<a href="https://www.cizup.dev" target="_blank" id="cz">CizUp</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<script>
+			const menuButton = document.querySelector('.burger')
+			if (menuButton) {
+				const menuBody = document.querySelector('.menu')
+				menuButton.addEventListener('click', function (e) {
+					document.body.classList.toggle('_lock')
+					menuButton.classList.toggle('_active')
+					menuBody.classList.toggle('_active')
+				})
+			}
+		</script>
+		<div class="header__container"></div>
+		<script>
+			function showAdditionalContent() {
+				document.getElementById('helloText').style.display = 'none'
+				document.getElementById('additionalContent').style.display = 'block'
+			}
+		</script>
+
+		<div
+			class="giriş"
+			id="helloText"
+			onclick="showAdditionalContent()"
+			style="cursor: pointer"
+		>
+			Hoşgeldiniz Ben İbrahim Talha ÜYEL
+			<p class="yazı">bu sayfayı geçmek için yazıya tıklayabilirsiniz</p>
+		</div>
+		<div id="helloText"></div>
+
+		<div id="additionalContent" style="display: none">
+			<!-- Buraya yaş hesaplama bölümünü ekleyebilirsiniz -->
+
+			<div class="container">
+				<div class="fotoğraf">
+					<img id="resim" src="/img/photoes/ibrahim.jpg" />
+				</div>
+				<div class="metin">
+					<h1 class="baslık">İbrahim Talha ÜYEL</h1>
+					<h2>İbrahim Talha ÜYEL Kimdir</h2>
+					<p>
+						2008 yılında Nevşehir'de doğdum ve yaşamıma Kayseri'de devam
+						etmekteyim. Ortaokul ve liseyi imamhatip eğitim programında okudum
+						ve hala okumaya devam etmekteyim. Yazılımın hayatıma nereden
+						girdiğine gelecek olursak, ben 4. sınıfta iken dayımın yazılım
+						yapmaya başladığını gördüm ve o an merak salarak yazılım yapmaya
+						başladım ve şuanda hala aktif olarak yazılım yapmaktayım. O zamanlar
+						Arduino ile kod yazmaya başlamıştım. Örnek vermek gerekirse; duvara
+						çarpmayan araba, trafik lambası, ısı sensörü, hareket sensörü vb. Şu
+						anda ise 2023 yılında okulumuza gelerek bize yeni nesil ve normal
+						sistemden daha verimli olan eğitim programı olan cizup ile devam
+						etmekteyim. Kısaca hayatım böyle ve hala böyle devam etmekte.
+					</p>
+					<h2>Önceden Yaptığım Proje Linkleri</h2>
+					<p><a href="https://motorsitesi.netlify.app/">Motor sitem</a></p>
+
+					<h2>Hobilerim</h2>
+					<p>
+						Hobilerim en başında motor sevdam gelmektedir. Sebebini bilmeden
+						çocukluktan beri en büyük hayalimdir ve hala o hayalimdeki motora
+						ulaşmak için çabalıyorum ve çabalamaya devam edeceğim. Diğer çok
+						sevdiğim hobim ise bisiklet sürmek ve kayak yapmak. Eğer bisiklet
+						ile alakalı videolarımı görmek isterseniz bu linke tıklayabilirsiniz
+						=>
+						<a
+							class="link"
+							href="https://www.instagram.com/reel/CujsSlTqsZcuff4LKAV3yN4DfHY6UGXk2Oesv80/"
+							>Instagram hesabım.</a
+						>
+						Bunların yanında Instagram platformunda edit sayfam var ve devamlı
+						olarak orada motor editi yapıyorum. Oranın linki burada =>
+						<a class="link" href="https://www.instagram.com/reel/C2pX2gpNgAm/"
+							>Edit Hesabım</a
+						>.
+					</p>
+					<h2>En Sevdiğim Motorların Güç Sıralaması</h2>
+					<div id="siralamaSonucu"></div>
+				</div>
+			</div>
+			<script>
+				// Motor nesnelerini içeren bir dizi
+				var motorlar = [
+					{ marka: 'Yamaha', model: 'YZF-R1', cc: 998 },
+					{ marka: 'Kawasaki', model: 'Ninja ZX-10r', cc: 998 },
+					{ marka: 'Honda', model: ' CBR S1000RR', cc: 998 },
+					{ marka: 'Bmw', model: 'S1000RR', cc: 999 },
+				]
+
+				// cc'ye göre motorları sıralama işlevi
+				function ccyeGoreSırala(motorlar) {
+					return motorlar.sort(function (a, b) {
+						return b.cc - a.cc
+					})
+				}
+
+				// Sıralanmış motorları HTML içine yazdırma
+				function sıralanmışMotorlarıGoster() {
+					var sıralanmışMotorlarHTML = '<ul>'
+					var sıralanmışMotorlar = ccyeGoreSırala(motorlar)
+					sıralanmışMotorlar.forEach(function (motor) {
+						sıralanmışMotorlarHTML +=
+							'<li>' +
+							motor.marka +
+							' ' +
+							motor.model +
+							' - ' +
+							motor.cc +
+							'cc' +
+							'</li>'
+					})
+					sıralanmışMotorlarHTML += '</ul>'
+					document.getElementById('siralamaSonucu').innerHTML =
+						sıralanmışMotorlarHTML
+				}
+
+				// Sayfa yüklendiğinde sıralanmış motorları göster
+				sıralanmışMotorlarıGoster()
+			</script>
+			<!-- Yaş Hesaplama bölümü -->
+			<div class="metin">
+				<h2>Yaş Hesaplama</h2>
+				<label for="dob">Doğum Tarihi:</label>
+				<input type="date" id="dob" />
+				<button onclick="hesaplaYas()">Bu Tuşa Basarak Yaşını Hesapla</button>
+				<p id="sonuc"></p>
+				<script>
+					function hesaplaYas() {
+						var dobInput = document.getElementById('dob').value
+						var dob = new Date(dobInput)
+						var bugun = new Date()
+						var yas = bugun.getFullYear() - dob.getFullYear()
+						// Eğer doğum günü henüz geçmediyse, yaş bir azaltılır
+						if (
+							bugun.getMonth() < dob.getMonth() ||
+							(bugun.getMonth() == dob.getMonth() &&
+								bugun.getDate() < dob.getDate())
+						) {
+							yas--
+						}
+						document.getElementById('sonuc').innerText = 'Yaşınız: ' + yas
+					}
+				</script>
+			</div>
+			<footer>
+				<div class="footer-con">
+					<div class="footer-w">
+						<div class="1foot foot">
+							<div class="p-p">
+								<img src="/img/jslogo.png" class="jsimg" alt="" />
+								<h1>Cizup</h1>
+							</div>
+							<hr style="height: 2px; background-color: white; width: 100%" />
+							<h2>"Your dream, My passion"</h2>
+						</div>
+
+						<div class="both-foot">
+							<div class="foot">
+								<ul class="footer_list">
+									<li>
+										<a
+											class="footer_li_p"
+											href="/html/Abdulkhamid/abdulkhamidProfile.html"
+											>Abdulkhamid</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_p" href="/html/Talha/Talha.html"
+											>Talha</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_p" href="/html/Minhazul/minhaz.html"
+											>Minhaz</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_p" href="/html/Ibrahim/ibrahim.html"
+											>Ibrahim</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div class="foot">
+								<ul class="footer_list">
+									<li>
+										<a class="footer_li_p" href="/html/Wanna/wanna.html"
+											>Wanna</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_p" href="/html/Abdullah/abdullah.html"
+											>Abdullah Sunulu</a
+										>
+									</li>
+									<li>
+										<a class="footer_li_p" href="/html/Mubarak/mubarak.html"
+											>Mubarak</a
+										>
+									</li>
+									<li>
+										<a
+											class="footer_li_p"
+											href="/html/Abdulsaid/saıdadyazpro.html"
+											>Absaid</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="fourthfoot">
+							<ul>
+								<li><p>telephone :03522213729</p></li>
+								<li><p>email : support@cizup.dev</p></li>
+								<li><p>link : https://cizup.dev</p></li>
+							</ul>
+							<div class="link-icons">
+								<li>
+									<a href="support@cizup.dev"><i class="bx bx-envelope"></i></a>
+								</li>
+								<li>
+									<a href="03522213729"><i class="bx bx-phone"></i></a>
+								</li>
+								<li>
+									<a href="https://cizup.dev"><i class="bx bx-link-alt"></i></a>
+								</li>
+								<li>
+									<a href="https://github.com/cizup"
+										><i class="bx bxl-github"></i
+									></a>
+								</li>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
